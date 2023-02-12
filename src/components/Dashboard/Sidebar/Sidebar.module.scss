@@ -1,0 +1,15 @@
+.sidebar {
+  display: none;
+  &Active {
+    display: block;
+    box-sizing: border-box;
+    border-right: 2px solid #666666;
+    min-width: 240px;
+    max-width: 300px;
+    width: 260px;
+    max-height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: 2px;
+  }
+
+}
