@@ -1,0 +1,44 @@
+@import '../variables';
+
+.sidebar {
+  padding: 0 10px;
+  display: none;
+  &Active {
+    display: block;
+    box-sizing: border-box;
+    border-right: 2px solid var(--header-text-color);
+    min-width: 280px;
+    max-width: 320px;
+    width: 260px;
+    max-height: 100vh;
+    overflow-y: scroll;
+    scrollbar-width: 2px;
+  }
+  .head {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .logotype{
+      img {
+        height: 28px;
+      }
+    }
+    .btnToogleSidebar {
+      border: none;
+      background: none;
+      margin: 0;
+      padding: 0;
+
+      img {
+        height: 24px;
+        width: 24px;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}

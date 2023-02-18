@@ -12,7 +12,7 @@ const Dashboard = (props: Props) => {
   return (
     <div className="root">
       <Sidebar />
-      {props.children}
+      <main>{props.children}</main>
       <Toolbar />
     </div>
   );

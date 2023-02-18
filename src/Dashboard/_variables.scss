@@ -1,0 +1,17 @@
+.root {
+  --main-text-color: #DEDEDE;
+  --header-text-color: #626262;
+  --back-color: #080810;
+  --bar-color: #080810;
+  --border-lines-color: #666666;
+  --color-background: rgb(230, 230, 230);
+  --color-font: black;
+}
+
+html[user-theme="dark"] {
+  --main-text-color: #DEDEDE;
+  --header-text-color: #626262;
+  --main-color: #080810;
+  --bar-color: #080810;
+  --border-lines-color: #666666;
+}

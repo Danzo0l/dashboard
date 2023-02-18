@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 // import local lib
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
-import Dashboard from "./components/Dashboard";
+import Dashboard from "./Dashboard";
 // import styles
 import "./index.scss";
 

@@ -7,6 +7,30 @@ function App() {
       <article>
         <h3>Main content</h3>
       </article>
+      <article>
+        <h3>Main content</h3>
+      </article>
+      <article>
+        <h3>Main content</h3>
+      </article>
+      <article>
+        <h3>Main content</h3>
+      </article>
+      <article>
+        <h3>Main content</h3>
+      </article>
+      <article>
+        <h3>Main content</h3>
+      </article>
+      <article>
+        <h3>Main content</h3>
+      </article>
+      <article>
+        <h3>Main content</h3>
+      </article>
+      <article>
+        <h3>Main content</h3>
+      </article>
     </div>
   );
 }
