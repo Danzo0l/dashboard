@@ -1,18 +1,16 @@
-@import '../variables';
-
-.sidebar {
+.toolbar {
+  box-sizing: border-box;
+  border-left: 2px solid var(--border-lines-color);
+  min-width: 240px;
+  max-width: 280px;
+  width: 10%;
+  max-height: 100vh;
+  overflow-y: scroll;
+  scrollbar-width: 2px;
   padding: 0 10px;
   display: none;
   &Active {
     display: block;
-    box-sizing: border-box;
-    border-right: 2px solid var(--header-text-color);
-    min-width: 280px;
-    max-width: 320px;
-    width: 260px;
-    max-height: 100vh;
-    overflow-y: scroll;
-    scrollbar-width: 2px;
   }
   .head {
     height: 48px;
@@ -41,4 +39,5 @@
       }
     }
   }
+
 }

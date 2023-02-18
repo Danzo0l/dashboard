@@ -1,8 +1,8 @@
 // import local libs
-import "./Dashboard.scss";
-import Toolbar from "./Toolbar";
+import Sidebar from "./components/Sidebar";
+import Toolbar from "./components/Toolbar";
 // import styles
-import Sidebar from "./Sidebar";
+import "./Dashboard.scss";
 
 interface Props {
   children: JSX.Element;

@@ -1,0 +1,36 @@
+section {
+    display: flex;
+    justify-content: space-between;
+    span {
+        font-size: 120%;
+        font-weight: 500;
+        margin-left: 0px;
+        color: var(--header-text-color);
+    }
+    button {
+        border: none;
+        background: none;
+        &.toggled {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.list {
+    width: 100%;
+    list-style: none;
+    list-style-position: inside;
+    text-indent: 0;
+    padding: 0 10px;
+    margin: 0 0 20px 0;
+    box-sizing: border-box;
+    li {
+        width: 100%;
+        padding: 5px;
+        font-size: 18px;
+        border-radius: 4px;
+        &:hover {
+            background-color: #ffffff16;
+        }
+    }
+}
