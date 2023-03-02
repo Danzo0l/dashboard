@@ -2,42 +2,17 @@
   box-sizing: border-box;
   border-left: 2px solid var(--border-lines-color);
   min-width: 240px;
-  max-width: 280px;
-  width: 10%;
+  max-width: 240px;
+  width: auto;
+  box-sizing: border-box;
   max-height: 100vh;
   overflow-y: scroll;
   scrollbar-width: 2px;
   padding: 0 10px;
   display: none;
   &Active {
-    display: block;
-  }
-  .head {
-    height: 48px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .logotype{
-      img {
-        height: 28px;
-      }
-    }
-    .btnToogleSidebar {
-      border: none;
-      background: none;
-      margin: 0;
-      padding: 0;
-
-      img {
-        height: 24px;
-        width: 24px;
-      }
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
+    flex-direction: column;
   }
 
 }

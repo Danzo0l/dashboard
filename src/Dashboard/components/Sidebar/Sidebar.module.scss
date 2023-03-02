@@ -12,33 +12,7 @@
   padding: 0 10px;
   display: none;
   &Active {
-    display: block;
-  }
-  .head {
-    height: 48px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    .logotype{
-      img {
-        height: 28px;
-      }
-    }
-    .btnToogleSidebar {
-      border: none;
-      background: none;
-      margin: 0;
-      padding: 0;
-
-      img {
-        height: 24px;
-        width: 24px;
-      }
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
+    flex-direction: column;
   }
 }

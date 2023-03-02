@@ -2,10 +2,9 @@
 import { useState } from "react";
 // import local libs
 import Account from "../Account";
+import Head from "../Head";
 import GroupList from "../GroupList/idnex";
 // import styles and img
-import list from "../../assets/img/list.svg";
-import logo from "../../assets/img/logotype.svg";
 import styles from "./Sidebar.module.scss";
 
 const Sidebar = () => {
@@ -18,20 +17,15 @@ const Sidebar = () => {
           : styles.sidebar
       }
     >
-      <div className={styles.head}>
-        {<a className={styles.logotype} href="/">
-          <img src={logo} alt="logo" />
-        </a>}
-        <button
-          onClick={() => setSidebarActive(!sidebarActive)}
-          className={styles.btnToogleSidebar}
-        >
-          <img src={list} alt="list" />
-        </button>
-      </div>
-      <Account/>
-      <GroupList count={5} title="Account"/>
-      <GroupList count={12} title="Groups"/>
+      <Head
+        logo={true}
+        icon={true}
+        currentState={sidebarActive}
+        setCurrentState={setSidebarActive}
+      />
+      <Account />
+      <GroupList count={5} title="Account" />
+      <GroupList count={12} title="Groups" />
     </aside>
   );
 };
