@@ -8,6 +8,7 @@ import GroupList from "../GroupList/idnex";
 
 const Toolbar = () => {
   const [toolbarActive, setToolbarActive] = useState<boolean>(true);
+  console.log("Toolbar --> rendered");
 
   return (
     <aside

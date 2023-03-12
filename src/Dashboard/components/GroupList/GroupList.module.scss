@@ -12,7 +12,10 @@ section {
         border: none;
         background: none;
         &.toggled {
-            transform: rotate(180deg);
+            transform: rotate(90deg);
+        }
+        svg {
+            fill: var(--main-text-color);
         }
     }
 }

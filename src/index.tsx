@@ -11,6 +11,7 @@ import "./index.scss";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+console.log("Index");
 root.render(
   <React.StrictMode>
     <Dashboard>

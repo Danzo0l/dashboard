@@ -15,6 +15,8 @@ interface Props {
 }
 
 const Head = (props: Props) => {
+  // console.log("Head --> rendered");
+
   return (
     <div className={styles.head}>
       {props.logo ? <img src={logo} alt="btn-icon" /> : <></>}
