@@ -1,10 +1,12 @@
 // import npm lib
+import { Provider } from "react-redux";
 import React from "react";
 import ReactDOM from "react-dom/client";
 // import local lib
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import Dashboard from "./Dashboard";
+import { store } from "./redux/store";
 // import styles
 import "./index.scss";
 
@@ -14,9 +16,11 @@ const root = ReactDOM.createRoot(
 console.log("Index");
 root.render(
   <React.StrictMode>
-    <Dashboard>
-      <App />
-    </Dashboard>
+    <Provider store={store}>
+      <Dashboard>
+        <App />
+      </Dashboard>
+    </Provider>
   </React.StrictMode>
 );
 
