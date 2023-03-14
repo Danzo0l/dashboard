@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import filterSlice from "./slices/dashboardSlice";
+import dasboardSlice from "./slices/dashboardSlice";
 
 export const store = configureStore({
   reducer: {
-    filterSlice,
+    dasboardSlice,
   },
 });
 
