@@ -8,10 +8,6 @@ import Toolbar from "./components/Toolbar";
 // import styles
 import "./Dashboard.scss";
 
-interface Props {
-  children: JSX.Element;
-}
-
 export interface BarContext {
   value: boolean;
   setValue: React.Dispatch<React.SetStateAction<boolean>>;
@@ -27,22 +23,28 @@ export const ToolbarVisible = createContext<BarContext>({
   setValue: useState,
 });
 
-const Dashboard = (props: Props) => {
+const Dashboard = (props: any) => {
   const [toolbarVisible, setToolbarVisible] = useState<boolean>(true);
   const [sidebarVisible, setSidebarVisible] = useState<boolean>(true);
- 
+
   return (
     <div className="root">
       <BrowserRouter>
-        <ToolbarVisible.Provider value={{value: toolbarVisible, setValue: setToolbarVisible}}>
-          <SidebarVisible.Provider value={{value: sidebarVisible, setValue: setSidebarVisible}}>
-            {sidebarVisible? <Sidebar /> : null}
+        <ToolbarVisible.Provider
+          value={{ value: toolbarVisible, setValue: setToolbarVisible }}
+        >
+          <SidebarVisible.Provider
+            value={{ value: sidebarVisible, setValue: setSidebarVisible }}
+          >
+            <Sidebar />
+            {/* {sidebarVisible ? <Sidebar /> : null} */}
             <main>
               <Routes>
                 <Route path="/" element={props.children} />
               </Routes>
             </main>
-            {toolbarVisible? <Toolbar/> : null}
+            <Toolbar />
+            {/* {toolbarVisible ? <Toolbar /> : null} */}
           </SidebarVisible.Provider>
         </ToolbarVisible.Provider>
       </BrowserRouter>
@@ -51,3 +53,4 @@ const Dashboard = (props: Props) => {
 };
 
 export default Dashboard;
+export { Toolbar, Sidebar };

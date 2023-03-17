@@ -1,26 +1,23 @@
 // import npm lib
-import { Provider } from "react-redux";
 import React from "react";
 import ReactDOM from "react-dom/client";
 // import local lib
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import Dashboard from "./Dashboard";
-import { store } from "./redux/store";
 // import styles
 import "./index.scss";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-console.log("Index");
+console.log("index");
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <Dashboard>
-        <App />
-      </Dashboard>
-    </Provider>
+    <Dashboard>
+      <p>PIZDEC</p>
+      <App />
+    </Dashboard>
   </React.StrictMode>
 );
 
