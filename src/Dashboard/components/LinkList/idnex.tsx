@@ -1,23 +1,26 @@
 // import npm libs
 import { useState } from "react";
+import { Link } from "react-router-dom";
+// import local libs
+import { LinkListProps } from "../../types";
 // import styles
-import styles from "./GroupList.module.scss";
+import styles from "./LinkList.module.scss";
 
-interface Props {
-  title: string;
-  count: number;
-}
-
-const GroupList = (props: Props) => {
+const LinkList = (props: LinkListProps) => {
   const [listVisible, setListVisible] = useState<boolean>(false);
 
   let lis: Array<JSX.Element> = [];
 
-  for (var i = 0; i < props.count; i++) {
-    lis.push(<li>Component {i + 1}</li>);
-  }
-
-  // console.log("GroupList --> rendered");
+  // eslint-disable-next-line array-callback-return
+  props.items.map((elem) => {
+    lis.push(
+      <li>
+        <Link className={styles.link} to={elem.path}>
+          {elem.name}
+        </Link>
+      </li>
+    );
+  });
 
   return (
     <>
@@ -47,4 +50,4 @@ const GroupList = (props: Props) => {
   );
 };
 
-export default GroupList;
+export default LinkList;

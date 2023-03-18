@@ -1,31 +1,20 @@
 // import npm libs
-import { Route, Routes } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 // import local libs
+import { DashboardProps } from "./types";
 import Sidebar from "./components/Sidebar";
 import Toolbar from "./components/Toolbar";
-
+import Content from "./components/Content";
 // import styles
 import "./Dashboard.scss";
 
-interface Props {
-  children: JSX.Element;
-}
-
-const Dashboard = (props: Props) => {
+const Dashboard = (props: DashboardProps) => {
   return (
     <div className="root">
-      <BrowserRouter>
-        <Sidebar />
-        <main>
-          <Routes>
-            <Route path="" element={props.children}></Route>
-          </Routes>
-        </main>
-        <Toolbar />
-      </BrowserRouter>
+      <BrowserRouter>{props.children}</BrowserRouter>
     </div>
   );
 };
 
 export default Dashboard;
+export { Sidebar, Toolbar, Content };
