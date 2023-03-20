@@ -5,19 +5,21 @@ import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 import Dashboard from "./Dashboard";
+import { store } from "./redux/store";
 // import styles
 import "./index.scss";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
-console.log("index");
+console.log("Index");
 root.render(
   <React.StrictMode>
-    <Dashboard>
-      <p>PIZDEC</p>
-      <App />
-    </Dashboard>
+    <Provider store={store}>
+      <Dashboard>
+        <App />
+      </Dashboard>
+    </Provider>
   </React.StrictMode>
 );
 

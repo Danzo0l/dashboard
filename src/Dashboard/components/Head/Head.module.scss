@@ -21,6 +21,9 @@
       height: 24px;
       width: 24px;
     }
+    svg {
+      fill: var(--btn-color);
+    }
 
     &:hover {
       cursor: pointer;
