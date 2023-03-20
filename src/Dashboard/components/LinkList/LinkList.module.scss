@@ -32,6 +32,7 @@ section {
     li {
         .link {
             text-decoration: none;
+            color: var(--main-text-color);
         }
         width: 100%;
         padding: 8px 6px 11px;
@@ -39,7 +40,7 @@ section {
         box-sizing: border-box;
         border-radius: 8px;
         &:hover {
-            background-color: #ffffff08;
+            background-color: var(--color-selected-background);
             // border-bottom: 1px solid #ffffff16;
             // border-top: 1px solid #ffffff16;
         }

@@ -16,32 +16,36 @@
   }
 }
 
-.toolbarBtn {
-  position: fixed;
-  right: -22px;
-  top: 10px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  opacity: .6;
-  background-color: #ffffff16;
-  border: none;
-  cursor: pointer;
-  transition: 100ms linear; 
-  &:hover {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-  img {
-    position: relative;
-    top: 1px;
-    left: 0px;
-    overflow: hidden;
-  }
-  svg {
-    fill: var(--main-text-color);
-    position: relative;
-    top: 2px;
-    right: 8px;
+.wrapper {
+  width: 25px;
+  .toolbarBtn {
+    position: fixed;
+    right: -24px;
+    top: 16px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    opacity: .6;
+    background-color: var(--color-selected-background);
+    border: none;
+    cursor: pointer;
+    transition: 100ms linear; 
+    &:hover {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+    img {
+      position: relative;
+      top: 1px;
+      left: 0px;
+      overflow: hidden;
+    }
+    svg {
+      fill: var(--main-text-color);
+      position: relative;
+      top: 2px;
+      right: 8px;
+      scale: 1.3;
+    }
   }
 }
