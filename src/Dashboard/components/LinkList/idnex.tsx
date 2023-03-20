@@ -14,7 +14,7 @@ const LinkList = (props: LinkListProps) => {
   // eslint-disable-next-line array-callback-return
   props.items.map((elem) => {
     lis.push(
-      <li key={elem.path}>
+      <li>
         <Link className={styles.link} to={elem.path}>
           {elem.name}
         </Link>

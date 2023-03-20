@@ -4,8 +4,11 @@ import ReactDOM from "react-dom/client";
 // import local lib
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
-import Dashboard, { Sidebar, Toolbar, Content } from "./Dashboard";
-import { LinkList, Account, AccountList } from "./Dashboard/components";
+import Dashboard, { Sidebar, Toolbar } from "./Dashboard";
+import Content from "./Dashboard/components/Content";
+import Account from "./Dashboard/components/Account";
+import AccountList from "./Dashboard/components/AccountList";
+import LinkList from "./Dashboard/components/LinkList/idnex";
 import { store } from "./redux/store";
 // import styles
 import "./index.scss";
@@ -19,7 +22,6 @@ const lsit = [
   { name: "three", path: "/three" },
   { name: "four", path: "/four" },
 ];
-
 console.log("Index");
 
 root.render(

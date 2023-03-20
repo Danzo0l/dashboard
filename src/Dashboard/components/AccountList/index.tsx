@@ -34,22 +34,22 @@ const AccountList = () => {
       <ul className={styles.list}>
         {listVisible ? (
           <>
-            <li key="Home">
+            <li>
               <Link className={styles.liInner} to={"/"}>
                 Home
               </Link>
             </li>
-            <li key="View profile">
+            <li>
               <Link className={styles.liInner} to={"/account/view"}>
                 View profile
               </Link>
             </li>
-            <li key="Edit account">
+            <li>
               <Link className={styles.liInner} to={"/account/edit"}>
                 Edit account
               </Link>
             </li>
-            <li key="Settings">
+            <li>
               <Link className={styles.liInner} to={"/account/settings"}>
                 Settings
               </Link>
