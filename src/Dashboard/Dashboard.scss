@@ -10,7 +10,7 @@
   overflow-y: scroll;
   overflow-x: hidden;
   @media (max-width: 767px) {
-    flex-direction: column;
+    flex-direction: row;
   }
 }
 

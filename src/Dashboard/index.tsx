@@ -1,4 +1,5 @@
 // import npm libs
+import { useEffect } from "react";
 import { BrowserRouter } from "react-router-dom";
 // import local libs
 import { DashboardProps } from "./types";
@@ -7,8 +8,18 @@ import Toolbar from "./components/Toolbar";
 import Content from "./components/Content";
 // import styles
 import "./Dashboard.scss";
+import { useTheme } from "../hooks/useTheme";
 
 const Dashboard = (props: DashboardProps) => {
+  const {setTheme} = useTheme();
+  
+  useEffect(() => {
+    setTheme(true);
+  })
+  
+  
+  
+
   return (
     <div className="root">
       <BrowserRouter>{props.children}</BrowserRouter>
