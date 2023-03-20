@@ -4,7 +4,8 @@ import ReactDOM from "react-dom/client";
 // import local lib
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
-import Dashboard from "./Dashboard";
+import Dashboard, { Sidebar, Toolbar, Content } from "./Dashboard";
+import { LinkList, Account, AccountList } from "./Dashboard/components";
 import { store } from "./redux/store";
 // import styles
 import "./index.scss";
@@ -12,12 +13,32 @@ import "./index.scss";
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
+const lsit = [
+  { name: "one", path: "/one" },
+  { name: "two", path: "/two" },
+  { name: "three", path: "/three" },
+  { name: "four", path: "/four" },
+];
+
 console.log("Index");
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <Dashboard>
-        <App />
+        <Sidebar key={"sidebar"}>
+          <Account />
+          <AccountList />
+        </Sidebar>
+        <Content key={"content"}>
+          <App />
+        </Content>
+        <Toolbar key={"toolbar"}>
+          <LinkList title="Group 1" items={lsit} />
+          <LinkList title="Group 2" items={lsit} />
+          <LinkList title="Group 3" items={lsit} />
+          <LinkList title="Group 4" items={lsit} />
+        </Toolbar>
       </Dashboard>
     </Provider>
   </React.StrictMode>
