@@ -11,14 +11,13 @@ import "./Dashboard.scss";
 import { useTheme } from "../hooks/useTheme";
 
 const Dashboard = (props: DashboardProps) => {
-  const {setTheme} = useTheme();
-  
+  const { setTheme } = useTheme();
+
   useEffect(() => {
     setTheme(true);
-  })
-  
-  
-  
+  });
+
+  console.log(window.getComputedStyle(document.body).content);
 
   return (
     <div className="root">
