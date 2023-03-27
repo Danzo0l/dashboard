@@ -4,7 +4,6 @@ import "./App.scss";
 function App() {
   return (
     <div className="App">
-      Main
       <article>
         <h3>Main content</h3>
       </article>

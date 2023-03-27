@@ -1,5 +1,15 @@
 @import './variables';
 
+@font-face {
+  font-family: 'Calibri';
+  src: url('./assets/fonts/Calibri-Regular.ttf') format('truetype'),
+}
+
+* {
+  font-family: 'Calibri', sans-serif;
+  font-size: 20px;
+}
+
 .root {
   background-color: var(--back-color);
   min-width: 100%;
@@ -9,18 +19,22 @@
   max-height: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-  @media (max-width: 767px) {
-    flex-direction: row;
+  @media (max-width: 576px) {
+    flex-direction: column;
   }
 }
 
 aside {
+  position: relative;
   background-color: var(--bar-color);
   width: 280px;
+  min-height: 100vh;
+  max-height: 100vh;
 }
 
 main {
-  padding: 0;
+  box-sizing: border-box;
+  padding: 10px 0 0 0;
   margin: 0 auto;
   // max-width: 1200px;
   overflow: scroll;
@@ -28,8 +42,8 @@ main {
   width: 100%;
   min-height: 100vh;
   max-height: 100vh;
-  @media (max-width: 767px) {
-    flex: 1;
+  @media (max-width: 576px) {
+    padding: 42px 5px 0 5px;
   }
 }
 
@@ -54,19 +68,11 @@ h4, h5, h6 {
   font-weight: 300;
 }
 
-
-
 *::-webkit-scrollbar {
   display: none;
 }
- 
-* {
-  -ms-overflow-style: none;  /* IE и Edge */
-  scrollbar-width: none;  /* Firefox */
-}
 
-// @media (max-width: 300px) {
-//   .root {
-//     flex-direction: column;
-//   }
-// }
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

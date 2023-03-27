@@ -5,16 +5,18 @@ import MyAccount from "../../pages/MyAccount";
 import EditAccount from "../../pages/EditAccount";
 import Settings from "../../pages/Settings";
 import { ContentProps } from "../../types";
+import basepathes from "../../basePathes.json";
 // import styles
 
 const Content = (props: ContentProps) => {
   return (
     <main>
+      <nav></nav>
       <Routes>
-        <Route path="" element={props.children} />
-        <Route path="/account/view" element={<MyAccount />}></Route>
-        <Route path="/account/edit" element={<EditAccount />}></Route>
-        <Route path="/account/settings" element={<Settings />}></Route>
+        <Route path={basepathes.home} element={props.children} />
+        <Route path={basepathes.view} element={<MyAccount />}></Route>
+        <Route path={basepathes.edit} element={<EditAccount />}></Route>
+        <Route path={basepathes.settings} element={<Settings />}></Route>
       </Routes>
     </main>
   );

@@ -21,8 +21,6 @@ const lsit = [
   { name: "four", path: "/four" },
 ];
 
-console.log("Index");
-
 root.render(
   <React.StrictMode>
     <Provider store={store}>

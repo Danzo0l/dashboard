@@ -1,5 +1,6 @@
 // import npm libs
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 // import local libs
 import { SidebarProps } from "../../types";
 import Head from "../Head";
@@ -7,12 +8,16 @@ import Head from "../Head";
 import styles from "./Sidebar.module.scss";
 
 const Sidebar = (props: SidebarProps) => {
-  const [sidebarActive, setSidebatActive] = useState(true);
   // You can use other methods of change state
   // use var names: sidebarActive: boolean, setSidebatActive(boolean)
+  const mobileSidebar = useMediaQuery({ query: "(max-width: 576px)" });
+  const absSidebar = useMediaQuery({ query: "(max-width: 800px)" });
+  const [sidebarActive, setSidebatActive] = useState(true);
 
-  console.log("Sidebar --> rendered");
-  // useMedia
+  useEffect(() => {
+    (mobileSidebar || absSidebar) && setSidebatActive(false);
+  }, [absSidebar, mobileSidebar]);
+
   return sidebarActive ? (
     <aside className={styles.sidebar + " " + styles.sidebarActive}>
       <Head
@@ -23,22 +28,41 @@ const Sidebar = (props: SidebarProps) => {
       />
       {props.children}
     </aside>
+  ) : mobileSidebar ? (
+    <nav className={styles.sidebarMobile}>
+      <Head
+        logo={true}
+        icon={true}
+        currentState={sidebarActive}
+        setCurrentState={setSidebatActive}
+      />
+    </nav>
   ) : (
     <button
       className={styles.sidebarBtn}
       onClick={() => setSidebatActive(true)}
     >
       <svg
-        width="11"
-        height="20"
-        viewBox="0 0 11 20"
+        width="20"
+        height="16"
+        viewBox="0 0 14 12"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           fillRule="evenodd"
           clipRule="evenodd"
-          d="M0.23013 0.225302C0.536971 -0.0751008 1.03446 -0.0751008 1.3413 0.225302L10.7699 9.45607C11.0767 9.75648 11.0767 10.2435 10.7699 10.5439L1.3413 19.7747C1.03446 20.0751 0.536971 20.0751 0.23013 19.7747C-0.0767101 19.4743 -0.0767101 18.9872 0.23013 18.6868L9.10312 10L0.23013 1.31316C-0.0767101 1.01276 -0.0767101 0.525706 0.23013 0.225302Z"
+          d="M0.5 0.75C0.5 0.335786 0.835785 0 1.25 0L13.4998 0C13.914 0 14.2498 0.335786 14.2498 0.75C14.2498 1.16421 13.914 1.5 13.4998 1.5H1.25C0.835785 1.5 0.5 1.16421 0.5 0.75Z"
+        />
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M0.5 5.25C0.5 4.83579 0.835785 4.5 1.25 4.5H13.4998C13.914 4.5 14.2498 4.83579 14.2498 5.25C14.2498 5.66421 13.914 6 13.4998 6H1.25C0.835785 6 0.5 5.66421 0.5 5.25Z"
+        />
+        <path
+          fillRule="evenodd"
+          clipRule="evenodd"
+          d="M0.5 10C0.5 9.58579 0.835785 9.25 1.25 9.25H13.4998C13.914 9.25 14.2498 9.58579 14.2498 10C14.2498 10.4142 13.914 10.75 13.4998 10.75H1.25C0.835785 10.75 0.5 10.4142 0.5 10Z"
         />
       </svg>
     </button>

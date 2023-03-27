@@ -1,18 +1,10 @@
 // import npm libs
-import { SetStateAction } from "react";
 // import local libs
+import { useTheme } from "../../hooks/useTheme";
+import { logoLight, logoDark } from "../../config";
+import { HeadProps } from "../../types";
 // import styles
 import styles from "./Head.module.scss";
-// import layers from "../../assets/img/layers.svg";
-// import list from "../../assets/img/list.svg";
-import logo from "../../assets/img/logotype.svg";
-
-interface Props {
-  logo: boolean;
-  icon: boolean; // TRUE - list FALSE - layers
-  currentState: boolean;
-  setCurrentState: React.Dispatch<SetStateAction<boolean>>;
-}
 
 const list = (
   <svg
@@ -52,12 +44,16 @@ const layers = (
   </svg>
 );
 
-const Head = (props: Props) => {
-  // console.log("Head --> rendered");
+const Head = (props: HeadProps) => {
+  const { theme } = useTheme();
 
   return (
     <div className={styles.head}>
-      {props.logo ? <img src={logo} alt="btn-icon" /> : <></>}
+      {props.logo ? (
+        <img src={theme === "dark" ? logoDark : logoLight} alt="btn-icon" />
+      ) : (
+        <></>
+      )}
       <button
         onClick={() => props.setCurrentState(!props.currentState)}
         className={styles.btnToogleSidebar}

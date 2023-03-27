@@ -8,16 +8,14 @@ import Toolbar from "./components/Toolbar";
 import Content from "./components/Content";
 // import styles
 import "./Dashboard.scss";
-import { useTheme } from "../hooks/useTheme";
+import { useTheme } from "./hooks/useTheme";
 
 const Dashboard = (props: DashboardProps) => {
-  const { setTheme } = useTheme();
+  const { theme } = useTheme();
 
   useEffect(() => {
-    setTheme(true);
+    window.localStorage.setItem("data-theme", theme);
   });
-
-  console.log(window.getComputedStyle(document.body).content);
 
   return (
     <div className="root">
